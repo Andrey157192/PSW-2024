@@ -1,0 +1,212 @@
+/* styles.css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  padding: 2rem;
+}
+
+/* Card Container Styling */
+.max-w-md,
+.max-w-4xl {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.max-w-md:hover,
+.max-w-4xl:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Typography */
+h2.text-3xl {
+  font-size: 2rem;
+  color: #333;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+p.text-sm.text-gray-600 {
+  text-align: center;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Form Elements */
+.space-y-6 > div,
+.space-y-8 > div {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+/* Label Styling */
+label.block {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  transition: all 0.2s ease;
+  background-color: #fff;
+  padding: 0 0.25rem;
+  z-index: 1;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+}
+
+/* Input Focus States */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2575fc;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Error Messages */
+p.text-red-600 {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Buttons */
+button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #5a0fbf 0%, #1f63e5 100%);
+  transform: translateY(-3px);
+}
+
+/* Toggle Links */
+.text-blue-600 {
+  color: #2575fc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.text-blue-600:hover {
+  color: #6a11cb;
+  text-decoration: underline;
+}
+
+/* Grid Layout for FormField */
+.grid.grid-cols-1.md\:grid-cols-2 {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Custom Select Styling */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Custom Date Input Styling */
+input[type="date"] {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23666' viewBox='0 0 16 16'%3E%3Cpath d='M4 1h8v2h1v12H3V3h1V1zm9 3H3v10h10V4zM5 1v2h6V1H5zm2 5h2v2H7V6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+/* Textarea Styling */
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  body {
+    padding: 1rem;
+  }
+
+  .max-w-md,
+  .max-w-4xl {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  h2.text-3xl {
+    font-size: 1.75rem;
+  }
+
+  button[type="submit"] {
+    font-size: 0.9rem;
+  }
+}
+
+/* Card Content Padding */
+.p-6 {
+  padding: 2rem;
+}
+
+/* Spacing Utilities */
+.mt-2 { margin-top: 0.5rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+/* Shadow Utilities */
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
